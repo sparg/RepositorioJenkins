@@ -8,14 +8,12 @@ pipeline {
     }
     stages {
         stage("Primer_Stage") {
-                environment { NAME = "ROSER" }
-                when { expression { return params.MOSTRAR_STEP } }
+            environment { NAME = "ROSER" }
+            when { expression { return params.MOSTRAR_STEP } }
             steps {
                 echo "Step 1. HOLA ${NAME}. SE EJECUTA EL CODIGO DEL STEP 1"
             }
         }
-    }
-    stages {
         stage("Segundo_Stage") {
             steps {
                 echo "Step 2."
